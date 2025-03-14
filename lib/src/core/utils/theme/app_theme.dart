@@ -8,6 +8,6 @@ class AppTheme {
     fontFamily: GoogleFonts.inter().fontFamily,
     brightness: Brightness.light,
     primaryColor: AppColors.primaryColor,
-    scaffoldBackgroundColor: AppColors.backGroundColor,
+    scaffoldBackgroundColor: AppColors.black,
   );
 }
