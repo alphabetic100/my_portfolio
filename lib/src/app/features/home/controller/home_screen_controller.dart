@@ -1,9 +1,18 @@
 import 'dart:async';
 
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeScreenController extends GetxController {
   RxBool nameAnimation = false.obs;
+  RxInt currentPage = 0.obs;
+  final PageController pageController = PageController();
+
+  void changePage(int index) {
+    currentPage.value = index;
+    pageController.animateToPage(index,
+        duration: const Duration(milliseconds: 300), curve: Curves.bounceInOut);
+  }
 
   void _startToggling() {
     Future.delayed(const Duration(seconds: 3), () {
