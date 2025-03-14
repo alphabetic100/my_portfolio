@@ -20,8 +20,12 @@ dependencies:
   #State management---> GetX
   get: ^4.7.2
   #Animations
-  lottie: ^3.3.1
-  
+  lottie: 
+  #Font
+  google_fonts: 
+  #Text Animation
+  animated_text_kit: ^4.2.3
+
 
 dev_dependencies:
   flutter_test:
