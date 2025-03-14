@@ -81,11 +81,11 @@ class ScreenSizer {
   }
 
   static double height(double percentage) {
-    return screenHeight * (percentage / 100);
+    return screenHeight * (percentage / 200);
   }
 
   static double width(double percentage) {
-    return screenWidth * (percentage / 100);
+    return screenWidth * (percentage / 200);
   }
 
   static double textSize(double percentage) {

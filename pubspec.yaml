@@ -25,6 +25,8 @@ dependencies:
   google_fonts: 
   #Text Animation
   animated_text_kit: ^4.2.3
+  #Url luncher
+  url_launcher: ^6.3.1
 
 
 dev_dependencies:
@@ -43,8 +45,8 @@ flutter:
   uses-material-design: true
 
 
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - asset/image/
   #   - images/a_dot_ham.jpeg
 
 
