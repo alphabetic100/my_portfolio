@@ -27,6 +27,11 @@ class HomeBody extends StatelessWidget {
                   children: [
                     HomeAnimatedName(),
                     const VerticalSpace(height: 10),
+                    const Text(
+                      "DART | FLUTTER",
+                      style: TextStyle(color: AppColors.textPirmary),
+                    ),
+                    const VerticalSpace(height: 10),
                     SizedBox(
                       width: ScreenSizer.screenWidth * 0.5,
                       child: Text(
@@ -36,6 +41,25 @@ class HomeBody extends StatelessWidget {
                             color: AppColors.textSecondary),
                       ),
                     ),
+                    VerticalSpace(height: ScreenSizer.height(5)),
+                    Container(
+                      height: 40,
+                      decoration: BoxDecoration(
+                          color: AppColors.backGroundColor,
+                          border: Border.all(color: Colors.grey),
+                          borderRadius: BorderRadius.circular(8)),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Center(
+                          child: Text(
+                            "Hire Me ",
+                            style: TextStyle(
+                                color: AppColors.textPirmary,
+                                fontSize: ScreenSizer.rBodyTextSize),
+                          ),
+                        ),
+                      ),
+                    )
                   ],
                 ),
                 Container(

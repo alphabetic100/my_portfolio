@@ -5,4 +5,11 @@ class ImagePath {
   static const xLogo = "asset/image/xicon.png";
   static const linkdIn = "asset/image/linkdin.png";
   static const gitHub = "asset/image/github.png";
+  static const List skillsList = [
+    "asset/svg/dart.svg",
+    "asset/svg/flutter.svg",
+    "asset/svg/ccna.svg",
+    "asset/svg/git.svg",
+    "asset/svg/vscode.svg",
+  ];
 }
