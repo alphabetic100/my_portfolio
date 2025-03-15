@@ -25,7 +25,7 @@ class _DownloadResumeButtonState extends State<DownloadResumeButton> {
         AppHelper.launchURL(SocialMediaUrls.resumeUrl);
       },
       child: Container(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(18),
           color: AppColors.black,

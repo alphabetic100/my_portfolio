@@ -28,11 +28,11 @@ class WebHomePage extends StatelessWidget {
                   child: PageView(
                 controller: homeScreenController.pageController,
                 physics: const NeverScrollableScrollPhysics(),
-                children: const [
-                  HomeBody(),
+                children: [
+                  const HomeBody(),
                   WebAboutPage(),
                   WebAboutPage(),
-                  WebContactView(),
+                  const WebContactView(),
                 ],
               ))
             ],
