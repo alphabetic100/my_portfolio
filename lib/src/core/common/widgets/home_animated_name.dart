@@ -14,6 +14,7 @@ class HomeAnimatedName extends StatelessWidget {
     return Obx(
       () => homeScreenController.nameAnimation.value
           ? AnimatedTextKit(
+              repeatForever: true,
               animatedTexts: [
                 TypewriterAnimatedText(
                   'alphabetic100',
@@ -26,6 +27,7 @@ class HomeAnimatedName extends StatelessWidget {
               ],
             )
           : AnimatedTextKit(
+              repeatForever: true,
               animatedTexts: [
                 TypewriterAnimatedText(
                   'MD. NAZMUL HASAN',
