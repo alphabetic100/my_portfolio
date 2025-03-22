@@ -15,7 +15,9 @@ class HomeTitleBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: ScreenSizer.screenWidth,
-      padding: const EdgeInsets.all(12),
+      padding: ScreenSizer.isMobile
+          ? const EdgeInsets.all(4)
+          : const EdgeInsets.all(12),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(18),
           color: AppColors.backGroundColor),
@@ -24,53 +26,62 @@ class HomeTitleBar extends StatelessWidget {
             horizontal: ScreenSizer.blockSizeHorizontal, vertical: 8),
         child: Row(
           children: [
-            const DownloadResumeButton(),
+            ScreenSizer.isMobile
+                ? const RotatedBox(
+                    quarterTurns: 2,
+                    child: DownloadResumeButton(),
+                  )
+                : const DownloadResumeButton(),
+            // const DownloadResumeButton(),
             const Spacer(),
-            Obx(
-              () => Row(
-                children: [
-                  CustomMenuButton(
-                    title: "Home",
-                    isSelected: homeScreenController.currentPage.value == 0,
-                    onTap: () {
-                      if (homeScreenController.currentPage.value != 0) {
-                        homeScreenController.changePage(0);
-                      }
-                    },
-                  ),
-                  HorizontalSpace(
-                    width: ScreenSizer.paddingSmall,
-                  ),
-                  CustomMenuButton(
-                    title: "About",
-                    isSelected: homeScreenController.currentPage.value == 1,
-                    onTap: () {
-                      if (homeScreenController.currentPage.value != 1) {
-                        homeScreenController.changePage(1);
-                      }
-                    },
-                  ),
-                  HorizontalSpace(width: ScreenSizer.paddingSmall),
-                  CustomMenuButton(
-                    title: "Projects",
-                    isSelected: homeScreenController.currentPage.value == 2,
-                    onTap: () {
-                      if (homeScreenController.currentPage.value != 2) {
-                        homeScreenController.changePage(2);
-                      }
-                    },
-                  ),
-                  HorizontalSpace(width: ScreenSizer.paddingSmall),
-                  CustomMenuButton(
-                    title: "Contact",
-                    isSelected: homeScreenController.currentPage.value == 3,
-                    onTap: () {
-                      if (homeScreenController.currentPage.value != 3) {
-                        homeScreenController.changePage(3);
-                      }
-                    },
-                  ),
-                ],
+            RotatedBox(
+              quarterTurns: 2,
+              child: Obx(
+                () => Row(
+                  children: [
+                    CustomMenuButton(
+                      title: "Home",
+                      isSelected: homeScreenController.currentPage.value == 0,
+                      onTap: () {
+                        if (homeScreenController.currentPage.value != 0) {
+                          homeScreenController.changePage(0);
+                        }
+                      },
+                    ),
+                    HorizontalSpace(
+                      width: ScreenSizer.paddingSmall,
+                    ),
+                    CustomMenuButton(
+                      title: "About",
+                      isSelected: homeScreenController.currentPage.value == 1,
+                      onTap: () {
+                        if (homeScreenController.currentPage.value != 1) {
+                          homeScreenController.changePage(1);
+                        }
+                      },
+                    ),
+                    HorizontalSpace(width: ScreenSizer.paddingSmall),
+                    CustomMenuButton(
+                      title: "Projects",
+                      isSelected: homeScreenController.currentPage.value == 2,
+                      onTap: () {
+                        if (homeScreenController.currentPage.value != 2) {
+                          homeScreenController.changePage(2);
+                        }
+                      },
+                    ),
+                    HorizontalSpace(width: ScreenSizer.paddingSmall),
+                    CustomMenuButton(
+                      title: "Contact",
+                      isSelected: homeScreenController.currentPage.value == 3,
+                      onTap: () {
+                        if (homeScreenController.currentPage.value != 3) {
+                          homeScreenController.changePage(3);
+                        }
+                      },
+                    ),
+                  ],
+                ),
               ),
             )
           ],

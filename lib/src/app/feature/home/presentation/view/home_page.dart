@@ -19,23 +19,48 @@ class HomePage extends StatelessWidget {
         return Scaffold(
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Column(
-              children: [
-                VerticalSpace(height: ScreenSizer.paddingSmall),
-                HomeTitleBar(),
-                Expanded(
-                    child: PageView(
-                  controller: homeScreenController.pageController,
-                  physics: const NeverScrollableScrollPhysics(),
-                  children: [
-                    HomeBody(),
-                    const AboutMePage(),
-                    const AboutMePage(),
-                    const ContactMePage(),
-                  ],
-                ))
-              ],
-            ),
+            child: ScreenSizer.isMobile
+                ? Row(
+                    children: [
+                      VerticalSpace(height: ScreenSizer.paddingSmall),
+                      // HomeTitleBar(),
+                      RotatedBox(
+                        quarterTurns: 1,
+                        child: HomeTitleBar(),
+                      ),
+                      ScreenSizer.isMobile
+                          ? const HorizontalSpace(width: 10)
+                          : const SizedBox.shrink(),
+                      Expanded(
+                          child: PageView(
+                        controller: homeScreenController.pageController,
+                        physics: const NeverScrollableScrollPhysics(),
+                        children: [
+                          HomeBody(),
+                          const AboutMePage(),
+                          const AboutMePage(),
+                          const ContactMePage(),
+                        ],
+                      ))
+                    ],
+                  )
+                : Column(
+                    children: [
+                      VerticalSpace(height: ScreenSizer.paddingSmall),
+                      HomeTitleBar(),
+                      Expanded(
+                          child: PageView(
+                        controller: homeScreenController.pageController,
+                        physics: const NeverScrollableScrollPhysics(),
+                        children: [
+                          HomeBody(),
+                          const AboutMePage(),
+                          const AboutMePage(),
+                          const ContactMePage(),
+                        ],
+                      ))
+                    ],
+                  ),
           ),
         );
       },
