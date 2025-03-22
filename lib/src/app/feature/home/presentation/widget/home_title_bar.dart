@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_portfolio/src/app/features/home/controller/home_screen_controller.dart';
-import 'package:my_portfolio/src/app/features/home/web_view/presentation/widget/download_resume_button.dart';
+import 'package:my_portfolio/src/app/feature/home/controller/home_page_controller.dart';
+import 'package:my_portfolio/src/app/feature/home/presentation/widget/download_resume_button.dart';
 import 'package:my_portfolio/src/core/common/widgets/app_spacers.dart';
 import 'package:my_portfolio/src/core/common/widgets/custom_menu_button.dart';
 import 'package:my_portfolio/src/core/utils/app_sizer/screen_sizer.dart';
@@ -9,8 +9,8 @@ import 'package:my_portfolio/src/core/utils/colors/app_colors.dart';
 
 class HomeTitleBar extends StatelessWidget {
   HomeTitleBar({super.key});
-  final HomeScreenController homeScreenController =
-      Get.find<HomeScreenController>();
+  final HomePageController homeScreenController =
+      Get.find<HomePageController>();
   @override
   Widget build(BuildContext context) {
     return Container(

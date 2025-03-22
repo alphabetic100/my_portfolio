@@ -1,4 +1,8 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:my_portfolio/src/app/feature/home/controller/home_page_controller.dart';
 import 'package:my_portfolio/src/core/common/widgets/app_spacers.dart';
 import 'package:my_portfolio/src/core/common/widgets/custom_social_media_button.dart';
 import 'package:my_portfolio/src/core/common/widgets/home_animated_name.dart';
@@ -9,8 +13,8 @@ import 'package:my_portfolio/src/core/utils/app_sizer/screen_sizer.dart';
 import 'package:my_portfolio/src/core/utils/colors/app_colors.dart';
 
 class HomeBody extends StatelessWidget {
-  const HomeBody({super.key});
-
+  HomeBody({super.key});
+  final HomePageController homePageController = Get.find<HomePageController>();
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -27,9 +31,11 @@ class HomeBody extends StatelessWidget {
                   children: [
                     HomeAnimatedName(),
                     const VerticalSpace(height: 10),
-                    const Text(
+                    Text(
                       "DART | FLUTTER",
-                      style: TextStyle(color: AppColors.textPirmary),
+                      style: TextStyle(
+                          color: AppColors.textPirmary,
+                          fontSize: ScreenSizer.width(4)),
                     ),
                     const VerticalSpace(height: 10),
                     SizedBox(
@@ -37,25 +43,45 @@ class HomeBody extends StatelessWidget {
                       child: Text(
                         AppConstant.coverLatter,
                         style: TextStyle(
-                            fontSize: ScreenSizer.rBodyTextSize,
+                            fontSize: ScreenSizer.width(3),
                             color: AppColors.textSecondary),
                       ),
                     ),
                     VerticalSpace(height: ScreenSizer.height(5)),
-                    Container(
-                      height: 40,
-                      decoration: BoxDecoration(
-                          color: AppColors.backGroundColor,
-                          border: Border.all(color: Colors.grey),
-                          borderRadius: BorderRadius.circular(8)),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Center(
-                          child: Text(
-                            "Hire Me ",
-                            style: TextStyle(
-                                color: AppColors.textPirmary,
-                                fontSize: ScreenSizer.rBodyTextSize),
+                    InkWell(
+                      onTap: () {
+                        log("message");
+                      },
+                      onHover: (value) {
+                        homePageController.hireMeHover.value = value;
+                      },
+                      child: Obx(
+                        () => Container(
+                          height: ScreenSizer.height(9),
+                          decoration: BoxDecoration(
+                            color: AppColors.backGroundColor,
+                            border: Border.all(color: Colors.grey),
+                            borderRadius: BorderRadius.circular(8),
+                            boxShadow: [
+                              BoxShadow(
+                                color: homePageController.hireMeHover.value
+                                    ? Colors.pinkAccent.shade200
+                                    : AppColors.black,
+                                spreadRadius: 3,
+                                blurRadius: 7,
+                              ),
+                            ],
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            child: Center(
+                              child: Text(
+                                "Hire Me ",
+                                style: TextStyle(
+                                    color: AppColors.textPirmary,
+                                    fontSize: ScreenSizer.rBodyTextSize),
+                              ),
+                            ),
                           ),
                         ),
                       ),
