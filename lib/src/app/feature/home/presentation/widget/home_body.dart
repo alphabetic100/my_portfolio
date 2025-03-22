@@ -24,11 +24,31 @@ class HomeBody extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: ScreenSizer.width(10)),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: ScreenSizer.isMobile
+                  ? MainAxisAlignment.center
+                  : MainAxisAlignment.spaceBetween,
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    if (ScreenSizer.isMobile) ...[
+                      Container(
+                        decoration:
+                            BoxDecoration(shape: BoxShape.circle, boxShadow: [
+                          BoxShadow(
+                            color: AppColors.backGroundColor,
+                            blurRadius: ScreenSizer.width(5),
+                            spreadRadius: ScreenSizer.width(3),
+                          )
+                        ]),
+                        child: CircleAvatar(
+                          radius: ScreenSizer.width(25),
+                          backgroundColor: AppColors.primaryColor,
+                          backgroundImage: const AssetImage(ImagePath.profile),
+                        ),
+                      ),
+                      const VerticalSpace(height: 20),
+                    ],
                     HomeAnimatedName(),
                     const VerticalSpace(height: 10),
                     Text(
@@ -88,20 +108,23 @@ class HomeBody extends StatelessWidget {
                     )
                   ],
                 ),
-                Container(
-                  decoration: BoxDecoration(shape: BoxShape.circle, boxShadow: [
-                    BoxShadow(
-                      color: AppColors.backGroundColor,
-                      blurRadius: ScreenSizer.width(5),
-                      spreadRadius: ScreenSizer.width(3),
-                    )
-                  ]),
-                  child: CircleAvatar(
-                    radius: ScreenSizer.width(25),
-                    backgroundColor: AppColors.primaryColor,
-                    backgroundImage: const AssetImage(ImagePath.profile),
-                  ),
-                )
+                ScreenSizer.isMobile
+                    ? const SizedBox.shrink()
+                    : Container(
+                        decoration:
+                            BoxDecoration(shape: BoxShape.circle, boxShadow: [
+                          BoxShadow(
+                            color: AppColors.backGroundColor,
+                            blurRadius: ScreenSizer.width(5),
+                            spreadRadius: ScreenSizer.width(3),
+                          )
+                        ]),
+                        child: CircleAvatar(
+                          radius: ScreenSizer.width(25),
+                          backgroundColor: AppColors.primaryColor,
+                          backgroundImage: const AssetImage(ImagePath.profile),
+                        ),
+                      )
               ],
             ),
           ),
@@ -110,24 +133,45 @@ class HomeBody extends StatelessWidget {
             padding:
                 EdgeInsets.symmetric(horizontal: ScreenSizer.paddingMedium),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: ScreenSizer.isMobile
+                  ? MainAxisAlignment.center
+                  : MainAxisAlignment.start,
               children: [
-                const CustomSocialMediaButton(
-                    imagePath: ImagePath.facebookLogo,
-                    url: SocialMediaUrls.facebook),
+                CustomSocialMediaButton(
+                  imagePath: ImagePath.facebookLogo,
+                  url: SocialMediaUrls.facebook,
+                  height: ScreenSizer.isMobile
+                      ? ScreenSizer.width(7)
+                      : ScreenSizer.width(10),
+                ),
                 HorizontalSpace(width: ScreenSizer.paddingSmall),
-                const CustomSocialMediaButton(
-                    imagePath: ImagePath.xLogo, url: SocialMediaUrls.twiter),
+                CustomSocialMediaButton(
+                    imagePath: ImagePath.xLogo,
+                    url: SocialMediaUrls.twiter,
+                    height: ScreenSizer.isMobile
+                        ? ScreenSizer.width(7)
+                        : ScreenSizer.width(10)),
                 HorizontalSpace(width: ScreenSizer.paddingSmall),
-                const CustomSocialMediaButton(
+                CustomSocialMediaButton(
+                    height: ScreenSizer.isMobile
+                        ? ScreenSizer.width(7)
+                        : ScreenSizer.width(10),
                     imagePath: ImagePath.instagramLogo,
                     url: SocialMediaUrls.instagram),
                 HorizontalSpace(width: ScreenSizer.paddingSmall),
-                const CustomSocialMediaButton(
-                    imagePath: ImagePath.linkdIn, url: SocialMediaUrls.linkdIn),
+                CustomSocialMediaButton(
+                    height: ScreenSizer.isMobile
+                        ? ScreenSizer.width(7)
+                        : ScreenSizer.width(10),
+                    imagePath: ImagePath.linkdIn,
+                    url: SocialMediaUrls.linkdIn),
                 HorizontalSpace(width: ScreenSizer.paddingSmall),
-                const CustomSocialMediaButton(
-                    imagePath: ImagePath.gitHub, url: SocialMediaUrls.gitHub),
+                CustomSocialMediaButton(
+                    height: ScreenSizer.isMobile
+                        ? ScreenSizer.width(7)
+                        : ScreenSizer.width(10),
+                    imagePath: ImagePath.gitHub,
+                    url: SocialMediaUrls.gitHub),
                 HorizontalSpace(width: ScreenSizer.paddingSmall)
               ],
             ),

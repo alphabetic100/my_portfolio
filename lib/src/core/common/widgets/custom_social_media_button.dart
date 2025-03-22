@@ -6,9 +6,11 @@ class CustomSocialMediaButton extends StatelessWidget {
     super.key,
     required this.imagePath,
     required this.url,
+    required this.height,
   });
   final String imagePath;
   final String url;
+  final double height;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -17,7 +19,7 @@ class CustomSocialMediaButton extends StatelessWidget {
       },
       child: Image.asset(
         imagePath,
-        height: 30,
+        height: height,
       ),
     );
   }
