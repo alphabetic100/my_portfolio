@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:my_portfolio/src/app/features/home/controller/home_screen_controller.dart';
-import 'package:my_portfolio/src/app/features/splash_screen/controller/splash_controller.dart';
+import 'package:my_portfolio/src/app/feature/home/controller/home_page_controller.dart';
+import 'package:my_portfolio/src/app/feature/splash_screen/controller/splash_controller.dart';
 
 class ControllerBinder extends Bindings {
   @override
@@ -8,8 +8,8 @@ class ControllerBinder extends Bindings {
     Get.lazyPut<SplashController>(
       () => SplashController(),
     );
-    Get.lazyPut<HomeScreenController>(
-      () => HomeScreenController(),
+    Get.lazyPut<HomePageController>(
+      () => HomePageController(),
       fenix: true,
     );
   }

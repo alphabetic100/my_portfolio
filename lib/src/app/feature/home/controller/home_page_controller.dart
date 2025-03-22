@@ -3,8 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class HomeScreenController extends GetxController {
+class HomePageController extends GetxController {
   RxBool nameAnimation = false.obs;
+  RxBool hireMeHover = false.obs;
   RxInt currentPage = 0.obs;
   final PageController pageController = PageController();
 

@@ -1,7 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_portfolio/src/app/features/splash_screen/controller/splash_controller.dart';
+import 'package:my_portfolio/src/app/feature/splash_screen/controller/splash_controller.dart';
 import 'package:my_portfolio/src/core/utils/colors/app_colors.dart';
 
 class SplashScreen extends StatelessWidget {

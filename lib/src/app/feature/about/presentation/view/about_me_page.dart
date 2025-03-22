@@ -6,15 +6,8 @@ import 'package:my_portfolio/src/core/constant/app_constant.dart';
 import 'package:my_portfolio/src/core/utils/app_sizer/screen_sizer.dart';
 import 'package:my_portfolio/src/core/utils/colors/app_colors.dart';
 
-class WebAboutPage extends StatelessWidget {
-  WebAboutPage({super.key});
-  final List<String> badgeUrls = [
-    "https://img.shields.io/badge/Dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white",
-    "https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=flutter&logoColor=white",
-    "https://img.shields.io/badge/CCNA-%23F56A5A.svg?style=for-the-badge&logo=cisco&logoColor=white",
-    "https://img.shields.io/badge/Git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white",
-    "https://img.shields.io/badge/VS_Code-%23007ACC.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white"
-  ];
+class AboutMePage extends StatelessWidget {
+  const AboutMePage({super.key});
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -65,25 +58,24 @@ class WebAboutPage extends StatelessWidget {
                         SizedBox(
                           width: ScreenSizer.screenWidth,
                           child: Expanded(
-                            child: Row(
-                              children: [
-                                Text(
-                                  "· BdCalling It Ltd.",
-                                  style: TextStyle(
-                                      color: AppColors.textPirmary,
-                                      fontSize: ScreenSizer.width(4),
-                                      fontWeight: FontWeight.w500),
-                                ),
-                                const Spacer(),
-                                Expanded(
-                                  child: Text(
-                                    "(Jan 2025 - Present)",
+                            child: RichText(
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text: "· BdCalling It Ltd.",
                                     style: TextStyle(
-                                        color: AppColors.textSecondary,
-                                        fontSize: ScreenSizer.rBodyTextSize),
+                                        color: AppColors.textPirmary,
+                                        fontSize: ScreenSizer.width(4),
+                                        fontWeight: FontWeight.w500),
                                   ),
-                                ),
-                              ],
+                                  TextSpan(
+                                    text: "  (Jan 2025 - Present)",
+                                    style: TextStyle(
+                                      color: AppColors.textSecondary,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
