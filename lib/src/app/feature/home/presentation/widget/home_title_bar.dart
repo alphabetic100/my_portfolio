@@ -35,7 +35,7 @@ class HomeTitleBar extends StatelessWidget {
             // const DownloadResumeButton(),
             const Spacer(),
             RotatedBox(
-              quarterTurns: 2,
+              quarterTurns: ScreenSizer.isMobile ? 2 : 0,
               child: Obx(
                 () => Row(
                   children: [

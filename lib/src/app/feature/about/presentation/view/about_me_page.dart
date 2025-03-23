@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:my_portfolio/src/core/common/widgets/about_me_card.dart';
 import 'package:my_portfolio/src/core/common/widgets/app_spacers.dart';
 import 'package:my_portfolio/src/core/constant/app_constant.dart';
@@ -93,12 +92,12 @@ class AboutMePage extends StatelessWidget {
             ),
           ),
           const VerticalSpace(height: 20),
-          AboutMeCard(
-            title: "Skills & Technologies",
-            child: Row(
-              children: [SvgPicture.network("")],
-            ),
-          )
+          // AboutMeCard(
+          //   title: "Skills & Technologies",
+          //   child: Row(
+          //     children: [SvgPicture.network("")],
+          //   ),
+          // )
         ],
       ),
     );
