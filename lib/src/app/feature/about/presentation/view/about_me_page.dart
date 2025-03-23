@@ -32,18 +32,9 @@ class AboutMePage extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            "· Diploma in Computer Science and Technology",
-                            style: TextStyle(
-                              color: AppColors.textSecondary,
-                            ),
-                          ),
-                          Text(
-                            "· SSC (Voc) in Computer Technology",
-                            style: TextStyle(
-                              color: AppColors.textSecondary,
-                            ),
-                          )
+                          _skillCard(
+                              "Diploma in Computer Science and Technology"),
+                          _skillCard("SSC (Voc) in Computer Technology"),
                         ],
                       )),
                 ),
@@ -100,6 +91,33 @@ class AboutMePage extends StatelessWidget {
           // )
         ],
       ),
+    );
+  }
+
+  Widget _skillCard(String skill) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: EdgeInsets.only(top: ScreenSizer.isMobile ? 8.0 : 3),
+          child: Icon(
+            Icons.circle,
+            color: AppColors.textPirmary,
+            size: ScreenSizer.isMobile ? 10 : ScreenSizer.width(2),
+          ),
+        ),
+        const SizedBox(
+          width: 5,
+        ),
+        Expanded(
+          child: Text(
+            skill,
+            style: const TextStyle(
+              color: AppColors.primaryColor,
+            ),
+          ),
+        )
+      ],
     );
   }
 }
