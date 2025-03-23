@@ -55,7 +55,8 @@ class HomeBody extends StatelessWidget {
                       "DART | FLUTTER",
                       style: TextStyle(
                           color: AppColors.textPirmary,
-                          fontSize: ScreenSizer.width(4)),
+                          fontSize:
+                              ScreenSizer.isMobile ? 15 : ScreenSizer.width(4)),
                     ),
                     const VerticalSpace(height: 10),
                     SizedBox(
@@ -63,7 +64,9 @@ class HomeBody extends StatelessWidget {
                       child: Text(
                         AppConstant.coverLatter,
                         style: TextStyle(
-                            fontSize: ScreenSizer.width(3),
+                            fontSize: ScreenSizer.isMobile
+                                ? 15
+                                : ScreenSizer.width(3),
                             color: AppColors.textSecondary),
                       ),
                     ),

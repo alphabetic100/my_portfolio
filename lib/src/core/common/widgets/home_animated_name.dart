@@ -17,9 +17,9 @@ class HomeAnimatedName extends StatelessWidget {
               repeatForever: true,
               animatedTexts: [
                 TypewriterAnimatedText(
-                  'alphabetic100',
+                  '@alphabetic100',
                   textStyle: TextStyle(
-                    fontSize: ScreenSizer.width(6),
+                    fontSize: ScreenSizer.isMobile ? 20 : ScreenSizer.width(6),
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPirmary,
                   ),
@@ -32,7 +32,7 @@ class HomeAnimatedName extends StatelessWidget {
                 TypewriterAnimatedText(
                   'MD. NAZMUL HASAN',
                   textStyle: TextStyle(
-                    fontSize: ScreenSizer.width(6),
+                    fontSize: ScreenSizer.isMobile ? 22 : ScreenSizer.width(6),
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPirmary,
                   ),
